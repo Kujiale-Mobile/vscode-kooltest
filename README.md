@@ -1,38 +1,64 @@
-# 快速上手
+<h1 align="center">kool-test-script</h1>
 
-## 环境准备
+<p align="center">VsCode extension for Kooltest</p>
 
-安装 java 环境
+## 背景
 
-https://docs.oracle.com/goldengate/1212/gg-winux/GDRAD/java.htm#BGBFJHAB
+[Kooltest](https://github.com/Kujiale-Mobile/KoolTest) 是酷家乐研发的一个支持多终端的 UI 自动化测试框架。为了给用户提供更优质的产品体验，在产品上线前需要进行各项测试。其中回归测试多由测试人员手动执行，耗费了大量人力，并且还可能存在漏测问题。鉴于此，我们在跨端的 UI 自动化上面做了大量的优化和思考，实现了 KoolTest 的 跨端 UI 自动化测试方案，用以降低人力成本。目前本框架支持使用一套脚本规范来测试 Android、iOS、Web。
 
-安装 VSCode，并安装 kool-test-script 插件
+## Start
 
-https://code.visualstudio.com/
+kool-test-script 提供的核心能力有：
 
-![](https://qhstaticssl.kujiale.com/newt/165/image/png/1620440762840/48F1331DE7F02091AC40A183B083DF95.png)
+- **编码辅助**：基于 DSL 规范提供代码提示（自动补全、信息提示和定义跳转）、代码重构和代码片段等功能，覆盖场景多响应快准确率高，提升编码幸福感。
+- **Debug辅助**：提供运行测试脚本的能力，动态生成测试报告。
+- **录制行为**：在一些需要模拟鼠标操作/截图的场景，可以通过录制 Macro脚本的形式，记录下鼠标键盘的操作，自动生成具体的 DSL 代码。
 
-## 脚本书写
+VS Code 插件提供一些可以帮你更快开发脚本并且可以快速浏览，脚本运行的结果。
 
-直接使用 VsCode 创建一个项目，增加一个 .feature 文件，比如
+### 快速开始
 
-![](https://qhstaticssl.kujiale.com/newt/165/image/png/1622002840249/4AE5969D5EED7EFA47ADEB680012B7C8.png)
+1. 安装 java 环境 [https://docs.oracle.com/goldengate/1212/gg-winux/GDRAD/java.htm#BGBFJHAB](https://docs.oracle.com/goldengate/1212/gg-winux/GDRAD/java.htm#BGBFJHAB) 。
+2. 点击 VS Code 活动栏上的「插件商店图标」搜索 kool-test-script 或者在 VsCode 市场下载 [Kooltest 插件](https://marketplace.visualstudio.com/items?itemName=kujiale.kool-test-script)。
+3. 在 VsCode 创建一个 *.feature 文件，插件将自动为 feature 填充好模版。
+4. 即可按照你所想编写你的 kooltest 脚本了。
 
-点击 **脚本回放**（首次运行因为要下载对应环境配置，所以会慢一些），则直接会运行该脚本，如果需要打断点调试，可以在某个步骤中插入 debugger 标签（注意 debugger 标签不要放在 Scenario 第一行，也不要放在 Background 中），再点击运行回放时，网页会停留在该断点处，此时你可以使用截图、脚本录制（只能在 .macro 中进行录制），或自行获取 selector。比如
+### 自动补全
 
-```gherkin
-Scenario: 酷家乐网页登录测试-登录错误
-    * input "12345" to "输入密码"
-    * tap "登录"
-    debugger
-    * assert_exists "账号密码不正确"
-```
+代码补全 (Code Completion) 提供即时类名、方法名和关键字等预测，辅助开发人员编写代码，大幅提升开发效率。
 
-## 如何使用
+Kooltest 所使用的 DSL 语法是魔改自 Cucumber 提供 gherkin 语言，为了更好编写我们的 gherkin，我们需要对我们设计的关键字，方法名，文件路径等提供高亮和预测。
 
-### 点击运行
+kool-test-script 增强了测试人员经常使用的 gherkin 及样式相关文件的代码补全体验。
 
-点击 Scenario 上的脚本回放, 即可本地运行脚本
-![点击 Scenario 上的脚本回放, 即可本地运行脚本](https://qhstaticssl.kujiale.com/newt/101463/image/gif/1629354969058/BB28C2760BCC721930E6DA4D7228B0EB.gif)
+![https://qhstaticssl.kujiale.com/newt/101463/image/gif/1629774893779/8756842DD142D5B1BA983872D17AD8B1.gif](https://qhstaticssl.kujiale.com/newt/101463/image/gif/1629774893779/8756842DD142D5B1BA983872D17AD8B1.gif)
 
-**OK，以上就是所有你需要掌握的啦～，恭喜！**
+### *.feature文件
+
+脚本核心文件 feature 可以在编辑器里直接运行脚本
+
+![Kapture 2021-08-19 at 12.20.35.gif](VsCode%20%E6%8F%92%E4%BB%B6%E5%9C%A8%20kooltest%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%9A%84%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5%207aedafca2ee44e588c4b763120dab25d/Kapture_2021-08-19_at_12.20.35.gif)
+
+自动填充模版
+
+![https://qhstaticssl.kujiale.com/newt/103016/image/gif/1629773195621/7F450F9F39CAC3F5CF7B3288943218A4.gif](https://qhstaticssl.kujiale.com/newt/103016/image/gif/1629773195621/7F450F9F39CAC3F5CF7B3288943218A4.gif)
+
+### *.macro 文件
+
+对于提供脚本复用能力的宏指令文件，我们提供了辅助录制键盘鼠标行为的能力。
+
+Command + 鼠标点击自动跳转到对应 macro 文件
+
+![https://qhstaticssl.kujiale.com/newt/101463/image/gif/1629773942136/58DA810319ED7AA606D57F676E30A3C4.gif](https://qhstaticssl.kujiale.com/newt/101463/image/gif/1629773942136/58DA810319ED7AA606D57F676E30A3C4.gif)
+
+录制鼠标键盘的能力
+
+![https://qhstaticssl.kujiale.com/newt/101463/image/gif/1629774382141/880F3CE069ACD524CD8EF1394C585058.gif](https://qhstaticssl.kujiale.com/newt/101463/image/gif/1629774382141/880F3CE069ACD524CD8EF1394C585058.gif)
+
+### 日志系统
+
+运行脚本的时候，脚本会直接在 Terminal 上运行， 并记录如果脚本出错无法进行下去，代码会在哪个行为出错，定位到脚本具体的行为。
+
+在结束进程之后，kooltest 脚本会自动生成对应日志文件。
+
+![https://qhstaticssl.kujiale.com/newt/101463/image/gif/1629773568512/ECDA19578AB1F0DA8AA32157F2C93065.gif](https://qhstaticssl.kujiale.com/newt/101463/image/gif/1629773568512/ECDA19578AB1F0DA8AA32157F2C93065.gif)
