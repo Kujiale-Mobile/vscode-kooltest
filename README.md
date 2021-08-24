@@ -37,7 +37,7 @@ kool-test-script 增强了测试人员经常使用的 gherkin 及样式相关文
 
 脚本核心文件 feature 可以在编辑器里直接运行脚本
 
-![Kapture 2021-08-19 at 12.20.35.gif](VsCode%20%E6%8F%92%E4%BB%B6%E5%9C%A8%20kooltest%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%9A%84%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5%207aedafca2ee44e588c4b763120dab25d/Kapture_2021-08-19_at_12.20.35.gif)
+![Kapture 2021-08-19 at 12.20.35.gif](https://qhstaticssl.kujiale.com/newt/101463/image/gif/1629774888039/2E68D6A4699FD9054285E9B4D73327FB.gif)
 
 自动填充模版
 
