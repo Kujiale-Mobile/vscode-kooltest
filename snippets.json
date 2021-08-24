@@ -1,0 +1,242 @@
+{
+  "Feature": {
+    "prefix": "Feature",
+    "body": ["Feature: ${1:脚本名称}", "", "  "]
+  },
+  "Scenario": {
+    "prefix": "Scenario",
+    "body": ["Scenario: ${1:场景名称}", "", "  "]
+  },
+  "Background": {
+    "prefix": "Background",
+    "body": ["Background: ${1:共性步骤名称}", "", "  "]
+  },
+  "Scenario Outline": {
+    "prefix": "Scenario Outline",
+    "body": ["Scenario Outline: ${1:场景名称}", "", "  "]
+  },
+  "Examples": {
+    "prefix": "Examples",
+    "body": [
+      "Examples:",
+      "  | ${1:变量名1} | ${2:变量名2} | ${3:变量名3} |",
+      "  | ${4:变量值1} | ${5:变量值2} | ${6:变量值3} |"
+    ]
+  },
+  "check <元素>": {
+    "prefix": "* check \"<元素>\"",
+    "body": ["* check \"${1:元素}\""]
+  },
+  "tap <元素>": {
+    "prefix": "* tap \"<元素>\"",
+    "body": ["* tap \"${1:元素}\""]
+  },
+  "tap <x> <y>": {
+    "prefix": "* tap <x> <y>",
+    "body": ["* tap ${1:x} ${2:y}"]
+  },
+  "?tap <element>": {
+    "prefix": "* ?tap <element>",
+    "body": ["* ?tap ${1:元素}"]
+  },
+  "?tap <x> <y>": {
+    "prefix": "* ?tap <x> <y>",
+    "body": ["* ?tap ${1:x} ${2:y}"]
+  },
+  "wait <n>s": {
+    "prefix": "* wait <n>s",
+    "body": ["* wait ${1:n}s"]
+  },
+  "swipe <startX> <startY> <endX> <endY>": {
+    "prefix": "* swipe <startX> <startY> <endX> <endY>",
+    "body": ["* swipe ${1:startX} ${2:startY} ${3:endX} ${4:endY}"]
+  },
+  "swipe <元素> <x> <y>": {
+    "prefix": "* swipe \"<元素>\" <x> <y>",
+    "body": ["* swipe \"${1:元素}\" ${2:x} ${3:y}"]
+  },
+  "input <内容> <元素>": {
+    "prefix": "* input \"<内容>\" to \"<元素>\"",
+    "body": ["* input \"${1:内容}\" to \"${2:元素}\""]
+  },
+  "input <内容>": {
+    "prefix": "* input \"<内容>\"",
+    "body": ["* input \"${1:内容}\""]
+  },
+  "?input <内容> <元素>": {
+    "prefix": "* ?input \"<内容>\" to \"<元素>\"",
+    "body": ["* ?input \"${1:内容}\" to \"${2:元素}\""]
+  },
+  "?input <内容>": {
+    "prefix": "* ?input \"<内容>\"",
+    "body": ["* ?input \"${1:内容}\""]
+  },
+  "keyboard": {
+    "prefix": "* keyboard \"<按键>\"",
+    "body": ["* keyboard \"${1:按键}\""]
+  },
+  "?keyboard": {
+    "prefix": "* ?keyboard \"<按键>\"",
+    "body": ["* ?keyboard \"${1:按键}\""]
+  },
+  "key_down": {
+    "prefix": "* key down \"<按键>\"",
+    "body": ["* key down \"${1:按键}\""]
+  },
+  "key_up": {
+    "prefix": "* key up \"<按键>\"",
+    "body": ["* key up \"${1:按键}\""]
+  },
+  "upload": {
+    "prefix": "* upload \"<path>\"",
+    "body": ["* upload \"${1:path}\""]
+  },
+  "restart": {
+    "prefix": "* restart",
+    "body": ["* restart"]
+  },
+  "screenshot": {
+    "prefix": "* screenshot",
+    "body": ["* screenshot"]
+  },
+  "alert accept": {
+    "prefix": "* alert accept",
+    "body": ["* alert accept"]
+  },
+  "alert dismiss": {
+    "prefix": "* alert dismiss",
+    "body": ["* alert dismiss"]
+  },
+  "<key> = \"element://\"": {
+    "prefix": "* <key> = \"element\"",
+    "body": ["* ${1:变量名} = \"element//${2:元素名称}\""]
+  },
+  "open": {
+    "prefix": "* open \"<地址>\"",
+    "body": ["* open \"${1:地址}\""]
+  },
+  "macro": {
+    "prefix": "* macro <macro文件夹>",
+    "body": ["* macro macro"]
+  },
+  "mouse_down": {
+    "prefix": "* mouse down <x> <y>",
+    "body": ["* mouse down ${1:x} ${2:y}"]
+  },
+  "mouse_down_element": {
+    "prefix": "* mouse down <element>",
+    "body": ["* mouse down \"${1:element}\""]
+  },
+  "mouse_up": {
+    "prefix": "* mouse up <x> <y>",
+    "body": ["* mouse up ${1:x} ${2:y}"]
+  },
+  "mouse_move": {
+    "prefix": "* mouse move <x> <y>",
+    "body": ["* mouse move ${1:x} ${2:y}"]
+  },
+  "mouse_context": {
+    "prefix": "* mouse context <x> <y>",
+    "body": ["* mouse context ${1:x} ${2:y}"]
+  },
+  "mouse_wheel": {
+    "prefix": "* mouse wheel <x> <y> <deltaY>",
+    "body": ["* mouse wheel ${1:x} ${2:y} ${3:deltaY}"]
+  },
+  "* macro <path>": {
+    "prefix": "* macro <path>",
+    "body": ["* macro ${1:path}"]
+  },
+  "assert_checked": {
+    "prefix": "* assert_checked \"<元素>\"",
+    "body": ["* assert_checked \"${1:元素}\""]
+  },
+  "assert_not_checked": {
+    "prefix": "* assert_not_checked \"<元素>\"",
+    "body": ["* assert_not_checked \"${1:元素}\""]
+  },
+  "assert_toast": {
+    "prefix": "* assert_toast \"<元素>\"",
+    "body": ["* assert_toast \"${1:元素}\""]
+  },
+  "assert_exists": {
+    "prefix": "* assert_exists \"<any>\"",
+    "body": ["* assert_exists \"${1:元素}\""]
+  },
+  "assert_exists_image": {
+    "prefix": "* assert_exists 图片",
+    "body": ["* assert_exists \"image://${1:图片路径}\""]
+  },
+  "assert_exists_element": {
+    "prefix": "* assert_exists 元素",
+    "body": ["* assert_exists \"element://${1:元素}\""]
+  },
+  "?assert_exists": {
+    "prefix": "* ?assert_exists \"<元素>\"",
+    "body": ["* ?assert_exists \"${1:元素}\""]
+  },
+  "assert_not_exists": {
+    "prefix": "* assert_not_exists \"<元素>\"",
+    "body": ["* assert_not_exists \"${1:元素}\""]
+  },
+  "assert_screen_equal": {
+    "prefix": "* assert_screen_equal",
+    "body": ["* assert_screen_equal \"image://${1:元素}\""]
+  },
+  "assert_text_equal": {
+    "prefix": "* assert_text_equal \"<文本1>\" \"<文本2>\"",
+    "body": ["* assert_text_equal \"${1:文本1}\" \"${1:文本2}\""]
+  },
+  "assert_title_exists": {
+    "prefix": "* assert_title_exists \"<元素>\"",
+    "body": ["* assert_title_exists \"${1:元素}\""]
+  },
+  "execute_script": {
+    "prefix": "* execute_script",
+    "body": ["* execute_script\n\"\"\"\n${1:脚本片段}\n\"\"\""]
+  },
+  "execute_script_arguments": {
+    "prefix": "* execute_script ${参数1} ${参数2} ${参数3}",
+    "body": ["* execute_script ${1} ${2} ${3}\n\"\"\"\n${1:脚本片段}\n\"\"\""]
+  },
+  "do_get": {
+    "prefix": "* do_get \"<url>\"",
+    "body": ["* do_get \"${1:url}\""]
+  },
+  "do_post": {
+    "prefix": "* do_post \"<url>\"",
+    "body": ["* do_post \"${1:url}\""]
+  },
+  "do_put": {
+    "prefix": "* do_put \"<url>\"",
+    "body": ["* do_put \"${1:url}\""]
+  },
+  "do_delete": {
+    "prefix": "* do_delete \"<url>\"",
+    "body": ["* do_delete \"${1:url}\""]
+  },
+  "hover": {
+    "prefix": "* hover \"<元素>\"",
+    "body": ["* hover \"${1:元素}\""]
+  },
+  "hover_x_y": {
+    "prefix": "* hover \"<x>\" \"<y>\"",
+    "body": ["* hover \"${1:x}\" \"${2:y}\""]
+  },
+  "window (maximize|fullscreen|close)": {
+    "prefix": "* window <maximize|fullscreen|close>",
+    "body": ["* window ${1:maximize|fullscreen|close}"]
+  },
+  "scroll <x> <y>": {
+    "prefix": "* scroll <x> <y>",
+    "body": ["* scroll ${1:x} ${2:y}"]
+  },
+  "scroll_to": {
+    "prefix": "* scroll_to \"<元素>\"",
+    "body": ["* scroll_to \"${1:元素}\""]
+  },
+  "debugger": {
+    "prefix": "debugger",
+    "body": ["debugger"]
+  }
+}

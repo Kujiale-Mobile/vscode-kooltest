@@ -1,0 +1,199 @@
+{
+  "name": "kool-test-script",
+  "displayName": "kool-test-script",
+  "description": "kooltest脚本文件提示插件",
+  "engines": {
+    "vscode": "^1.49.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "publisher": "kujiale",
+  "keywords": [
+    "kool",
+    "test"
+  ],
+  "version": "1.0.51",
+  "icon": "media/kt.png",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.qunhequnhe.com/Avocado/vscode-kool-test"
+  },
+  "activationEvents": [
+    "onView:kool-rpa",
+    "onLanguage:gherkin",
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "kool-rpa.init",
+        "title": "初始化 RPA，请确保 chormedriver 已经运行"
+      },
+      {
+        "command": "kool-rpa.start",
+        "title": "开始录制"
+      },
+      {
+        "command": "kool-rpa.stop",
+        "title": "停止录制"
+      },
+      {
+        "command": "kool-rpa.refreshMacroWebview",
+        "title": "刷新"
+      },
+      {
+        "command": "kool-rpa.runAll",
+        "title": "运行 Kooltest 脚本"
+      },
+      {
+        "command": "kool-rpa.run",
+        "title": "运行 Kooltest 脚本"
+      }
+    ],
+    "languages": [
+      {
+        "id": "gherkin",
+        "extensions": [
+          ".feature",
+          ".macro"
+        ],
+        "aliases": [
+          "Gherkin",
+          "gherkin"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "gherkin",
+        "scopeName": "source.feature",
+        "path": "./syntaxes/gherkin.tmLanguage.json",
+        "embeddedLanguages": {
+          "source.js": "javascript",
+          "meta.embedded.block.javascript": "javascript"
+        }
+      }
+    ],
+    "snippets": [
+      {
+        "language": "gherkin",
+        "path": "./snippets.json"
+      }
+    ],
+    "configuration": [
+      {
+        "title": "kool-rpa",
+        "properties": {},
+        "kool-rpa.editor.shortcuts": {
+          "type": "array",
+          "default": [
+            "开始录制",
+            "暂停录制"
+          ],
+          "scope": "application",
+          "items": {
+            "type": "string",
+            "enum": [
+              "开始录制",
+              "暂停录制"
+            ],
+            "enumDescriptions": [
+              "Start",
+              "Stop"
+            ]
+          },
+          "description": "Customize the shorcuts in editors."
+        }
+      }
+    ],
+    "views": {
+      "kool-rpa": [
+        {
+          "id": "kool-rpa",
+          "type": "webview",
+          "name": "测试工具",
+          "contextualTitle": "测试工具",
+          "visibility": "visible"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "kool-rpa",
+          "title": "自动测试",
+          "icon": "media/rpa.svg"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "kool-rpa.refreshMacroWebview",
+          "when": "view == kool-rpa-macro",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [],
+      "explorer/context": [
+        {
+          "command": "kool-rpa.run",
+          "when": "explorerResourceIsFolder == false"
+        },
+        {
+          "command": "kool-rpa.runAll",
+          "when": "explorerResourceIsFolder == true"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "kool-rpa.run",
+          "when": "resourceExtname == .feature || resourceExtname == .macro"
+        }
+      ]
+    },
+    "iconThemes": [
+      {
+        "id": "kool-test-icon-theme",
+        "label": "Kool Test Icon Theme",
+        "path": "./kool-test-icon-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.11",
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.0.4",
+    "@types/node": "^12.11.7",
+    "@types/selenium-webdriver": "^4.0.12",
+    "@types/vscode": "^1.49.0",
+    "@types/ws": "^7.4.2",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "^7.19.0",
+    "glob": "^7.1.6",
+    "mocha": "^8.2.1",
+    "typescript": "^4.1.3",
+    "vscode-test": "^1.5.0"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "carlo": "^0.9.46",
+    "fs-extra": "^10.0.0",
+    "port-pid": "^0.0.7",
+    "puppeteer-core": "^9.0.0",
+    "selenium-webdriver": "^4.0.0-beta.3",
+    "yocto-queue": "^0.1.0"
+  }
+}

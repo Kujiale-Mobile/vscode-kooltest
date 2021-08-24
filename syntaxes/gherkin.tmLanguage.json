@@ -1,0 +1,166 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Gherkin",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#notes"
+    },
+    {
+      "include": "#markup"
+    },
+    {
+      "include": "#actionWords"
+    },
+    {
+      "include": "#number"
+    },
+    {
+      "include": "#valueWords"
+    },
+    {
+      "include": "#envString"
+    },
+    {
+      "include": "#eleStrings"
+    },
+    {
+      "include": "#todo"
+    },
+    {
+      "include": "#block"
+    }
+  ],
+  "repository": {
+    "block": {
+      "patterns": [
+        {
+          "include": "#fenced_code_block"
+        },
+        {
+          "include": "#blockquote"
+        }
+      ]
+    },
+    "blockquote": {
+      "begin": "(^|\\G)[ ]{0,3}(>) ?",
+      "captures": {
+        "2": {
+          "name": "punctuation.definition.quote.begin.markdown"
+        }
+      },
+      "name": "markup.quote.markdown",
+      "patterns": [
+        {
+          "include": "#block"
+        }
+      ],
+      "while": "(^|\\G)\\s*(>) ?"
+    },
+    "fenced_code_block": {
+      "patterns": [
+        {
+          "include": "#fenced_code_block_js"
+        }
+      ]
+    },
+    "fenced_code_block_js": {
+      "begin": "(^|\\G)(\\s*)(\"{3,}|~{3,})\\s*",
+      "name": "markup.fenced_code.block.gherkin",
+      "end": "(^|\\G)(\\2|\\s{0,3})(\\3)\\s*$",
+      "beginCaptures": {
+        "3": {
+          "name": "punctuation.definition.gherkin"
+        },
+        "4": {
+          "name": "fenced_code.block.language.gherkin"
+        },
+        "5": {
+          "name": "fenced_code.block.language.attributes.gherkin"
+        }
+      },
+      "endCaptures": {
+        "3": {
+          "name": "punctuation.definition.gherkin"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(^|\\G)(\\s*)(.*)",
+          "while": "(^|\\G)(?!\\s*([\"~]{3,})\\s*$)",
+          "contentName": "meta.embedded.block.javascript",
+          "patterns": [
+            {
+              "include": "source.js"
+            }
+          ]
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.other.gherkin",
+          "match": "\\b(Feature|Scenario|Background|Examples|Outline)\\b"
+        }
+      ]
+    },
+    "todo": {
+      "patterns": [
+        {
+          "name": "entity.name.namespace",
+          "match": "debugger"
+        }
+      ]
+    },
+    "actionWords": {
+      "patterns": [
+        {
+          "name": "keyword.control.gherkin",
+          "match": "(?<!\\S)((\\?)?tap|(\\?)?click|wait|(\\?)?keyboard|key|(\\?)?input|to|open|macro|swipe|upload|restart|screenshot|alert|(\\?)?assert((_not)?_exists|_toast|(_not)?_checked|_title_exists|_screen_equal|_text_equal)|execute_script|hover|drag_and_drop|(physical_)?mouse(_to)?|window|check|scroll(_to)?|do_(get|post|put|delete))\\s+"
+        }
+      ]
+    },
+    "number": {
+      "patterns": [
+        {
+          "name": "constant.numeric.decimal.gherkin",
+          "match": "\\d+"
+        }
+      ]
+    },
+    "valueWords": {
+      "patterns": [
+        {
+          "name": "constant.character.gherkin",
+          "match": "(?<!\\S)((double_|right_|left_)?click(_and_hold)?|release|accept|dismiss|maximize|fullscreen|close)\\s+"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.gherkin",
+      "match": "\\${\\w+\\}"
+    },
+
+    "eleStrings": {
+      "name": "string.quoted.triple.gherkin",
+      "match": "(element://\\w*)|(image://\\w*)|(ocr://\\w*)"
+    },
+    "notes": {
+      "name": "comment.line.gherkin",
+      "begin": "#",
+      "end": "\\n"
+    },
+    "markup": {
+      "name": "markup.heading.gherkin",
+      "begin": "@",
+      "end": "\\n"
+    }
+  },
+  "scopeName": "source.feature"
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div width="200" height="200" style="background-color: blueviolet;">12321312321</div>
+  <div width="200" height="200" style="background-color: blue;">12321312321</div>
+  <div width="200" height="200" style="background-color: black;">12321312321</div>
+  <div width="200" height="200" style="background-color: red;">12321312321</div>
+  <div width="200" height="200" style="background-color: olivedrab;">12321312321</div>
+  <div width="200" height="200" style="background-color: orange;">12321312321</div>
+  <div width="200" height="200" style="background-color: greenyellow;">12321312321</div>
+  <div width="200" height="200" style="background-color: gray;">12321312321</div>
+  <div width="200" height="200" style="background-color: blueviolet;">12321312321</div>
+  <div width="200" height="200" style="background-color: blue;">12321312321</div>
+  <div width="200" height="200" style="background-color: black;">12321312321</div>
+  <div width="200" height="200" style="background-color: red;">12321312321</div>
+  <div width="200" height="200" style="background-color: olivedrab;">12321312321</div>
+  <div width="200" height="200" style="background-color: orange;">12321312321</div>
+  <div width="200" height="200" style="background-color: greenyellow;">12321312321</div>
+  <div width="200" height="200" style="background-color: gray;">12321312321</div>
+  <div width="200" height="200" style="background-color: blueviolet;">12321312321</div>
+  <div width="200" height="200" style="background-color: blue;">12321312321</div>
+  <div width="200" height="200" style="background-color: black;">12321312321</div>
+  <div width="200" height="200" style="background-color: red;">12321312321</div>
+  <div width="200" height="200" style="background-color: olivedrab;">12321312321</div>
+  <div width="200" height="200" style="background-color: orange;">12321312321</div>
+  <div width="200" height="200" style="background-color: greenyellow;">12321312321</div>
+  <div width="200" height="200" style="background-color: gray;">12321312321</div>
+  <div width="200" height="200" style="background-color: blueviolet;">12321312321</div>
+  <div width="200" height="200" style="background-color: blue;">12321312321</div>
+  <div width="200" height="200" style="background-color: black;">12321312321</div>
+  <div width="200" height="200" style="background-color: red;">12321312321</div>
+  <div width="200" height="200" style="background-color: olivedrab;">12321312321</div>
+  <div width="200" height="200" style="background-color: orange;">12321312321</div>
+  <div width="200" height="200" style="background-color: greenyellow;">12321312321</div>
+  <div width="200" height="200" style="background-color: gray;">12321312321</div>
+  <div width="200" height="200" style="background-color: blueviolet;">12321312321</div>
+  <div width="200" height="200" style="background-color: blue;">12321312321</div>
+  <div width="200" height="200" style="background-color: black;">12321312321</div>
+  <div width="200" height="200" style="background-color: red;">12321312321</div>
+  <div width="200" height="200" style="background-color: olivedrab;">12321312321</div>
+  <div width="200" height="200" style="background-color: orange;">12321312321</div>
+  <div width="200" height="200" style="background-color: greenyellow;">12321312321</div>
+  <div width="200" height="200" style="background-color: gray;">12321312321</div>
+  <div width="200" height="200" style="background-color: blueviolet;">12321312321</div>
+  <div width="200" height="200" style="background-color: blue;">12321312321</div>
+  <div width="200" height="200" style="background-color: black;">12321312321</div>
+  <div width="200" height="200" style="background-color: red;">12321312321</div>
+  <div width="200" height="200" style="background-color: olivedrab;">12321312321</div>
+  <div width="200" height="200" style="background-color: orange;">12321312321</div>
+  <div width="200" height="200" style="background-color: greenyellow;">12321312321</div>
+  <div width="200" height="200" style="background-color: gray;">12321312321</div>
+</body>
+<script>
+  let start = ''
+  let end = ''
+  let mask = document.createElement('div')
+  mask.id = 'kool-test-mask'
+  mask.style = 'z-index: 999; width: 100vw; height:100vh; position: fixed; top: 0; left: 0'
+  let shotSelector = document.createElement('div')
+  document.body.appendChild(mask)
+  mask.appendChild(shotSelector)
+  window.addEventListener('click', (e) => {
+    if(start) {
+      end = [e.clientX ,e.clientY]
+      start = ''
+      console.warn('recorder event {screenshot}:', start, end)
+    } else {
+      start = [e.clientX ,e.clientY]
+      console.warn('recorder event {screenshot}:', start, end)
+    }
+  })
+  window.addEventListener('mousemove', (e) => {
+    if(start && !end) {
+      let left = Math.min(e.clientX, start[0])
+      let top = Math.min(e.clientY, start[1])
+      let width = Math.abs(e.clientX - start[0])
+      let height = Math.abs(e.clientY - start[1])
+      shotSelector.style = 'border: 2px red solid; position: absolute; left:' + left + 'px;top:' + top + 'px;width:' + width+ 'px;height:' + height + 'px;';
+    }
+  })
+  
+</script>
+</html>
