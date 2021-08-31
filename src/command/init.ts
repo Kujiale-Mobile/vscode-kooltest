@@ -43,7 +43,7 @@ const index = async (
       });
     return currentPage;
   } catch (error) {
-    vscode.window.showErrorMessage(error.message);
+    vscode.window.showErrorMessage((error as Error).message);
     throw error;
   }
 };

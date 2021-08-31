@@ -1,4 +1,4 @@
-import { FSWatcher } from "node:fs";
+import { FSWatcher } from "fs";
 import * as puppeteer from "puppeteer-core";
 import * as vscode from "vscode";
 import { commands } from "vscode";
