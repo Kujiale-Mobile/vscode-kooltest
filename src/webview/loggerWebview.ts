@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { AbstractWebview, IWebviewOption } from './AbstractWebview';
+import { AbstractWebview, IWebviewOption } from './abstractWebview';
 
 export class LoggerWebview extends AbstractWebview {
   protected getWebviewOption(): IWebviewOption {
