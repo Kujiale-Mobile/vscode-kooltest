@@ -1,4 +1,4 @@
-import { exec } from "child_process";
+import { exec } from 'child_process';
 
 export default async (): Promise<boolean> => {
   return new Promise((res, rej) => {
@@ -10,4 +10,4 @@ export default async (): Promise<boolean> => {
       res(true);
     });
   });
-}
+};

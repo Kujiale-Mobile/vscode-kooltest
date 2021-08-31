@@ -1,4 +1,4 @@
-import * as vs from "vscode";
+import * as vs from 'vscode';
 
 interface PathConfigurationValues {
   withExtension?: boolean;
@@ -10,12 +10,12 @@ interface PathConfigurationValues {
         isDir?: boolean;
         context?: string;
       };
-    }
+    },
   ];
   pathMappings?: [
     {
       [key: string]: string;
-    }
+    },
   ];
   transformations?: [
     {
@@ -24,7 +24,7 @@ interface PathConfigurationValues {
       when?: {
         fileName?: string;
       };
-    }
+    },
   ];
   triggerOutsideStrings?: boolean;
   disableUpOneFolder?: boolean;
@@ -47,32 +47,32 @@ export default class PathConfiguration {
 
   update(fileUri?: vs.Uri) {
     var codeConfiguration = vs.workspace.getConfiguration(
-      "path-autocomplete",
-      fileUri || null
+      'path-autocomplete',
+      fileUri || null,
     );
 
-    this.data.withExtension = codeConfiguration.get("includeExtension");
+    this.data.withExtension = codeConfiguration.get('includeExtension');
     this.data.withExtensionOnImport = codeConfiguration.get(
-      "extensionOnImport"
+      'extensionOnImport',
     );
-    this.data.excludedItems = codeConfiguration.get("excludedItems");
-    this.data.pathMappings = codeConfiguration.get("pathMappings");
-    this.data.pathSeparators = codeConfiguration.get("pathSeparators");
-    this.data.transformations = codeConfiguration.get("transformations");
+    this.data.excludedItems = codeConfiguration.get('excludedItems');
+    this.data.pathMappings = codeConfiguration.get('pathMappings');
+    this.data.pathSeparators = codeConfiguration.get('pathSeparators');
+    this.data.transformations = codeConfiguration.get('transformations');
     this.data.triggerOutsideStrings = codeConfiguration.get(
-      "triggerOutsideStrings"
+      'triggerOutsideStrings',
     );
-    this.data.disableUpOneFolder = codeConfiguration.get("disableUpOneFolder");
-    this.data.useBackslash = codeConfiguration.get("useBackslash");
+    this.data.disableUpOneFolder = codeConfiguration.get('disableUpOneFolder');
+    this.data.useBackslash = codeConfiguration.get('useBackslash');
     this.data.enableFolderTrailingSlash = codeConfiguration.get(
-      "enableFolderTrailingSlash"
+      'enableFolderTrailingSlash',
     );
     this.data.ignoredFilesPattern = codeConfiguration.get(
-      "ignoredFilesPattern"
+      'ignoredFilesPattern',
     );
-    this.data.ignoredPrefixes = codeConfiguration.get("ignoredPrefixes");
+    this.data.ignoredPrefixes = codeConfiguration.get('ignoredPrefixes');
     this.data.homeDirectory =
-      process.env[process.platform == "win32" ? "USERPROFILE" : "HOME"];
+      process.env[process.platform == 'win32' ? 'USERPROFILE' : 'HOME'];
 
     var workspaceRootFolder = vs.workspace.workspaceFolders
       ? vs.workspace.workspaceFolders[0]

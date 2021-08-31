@@ -1,7 +1,7 @@
-import { exec, ChildProcess } from "child_process";
-import { kill } from "process";
-import { store } from "../store";
-const pids = require("port-pid");
+import { exec, ChildProcess } from 'child_process';
+import { kill } from 'process';
+import { store } from '../store';
+const pids = require('port-pid');
 
 export default async () => {
   let cp: ChildProcess;
@@ -9,8 +9,8 @@ export default async () => {
     store.getDriver()?.close();
     return;
   }
-  const isRunning = await new Promise((res) => {
-    cp = exec("curl http://localhost:9222", (error) => {
+  const isRunning = await new Promise(res => {
+    cp = exec('curl http://localhost:9222', error => {
       if (error) {
         res(false);
         return;

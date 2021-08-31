@@ -130,7 +130,7 @@
       "patterns": [
         {
           "name": "constant.numeric.decimal.gherkin",
-          "match": "\\d+"
+          "match": "(\\d+)|(\/\\d+)|(\/=\\d+)|(\/>\\d+)|(\/<\\d+)"
         }
       ]
     },

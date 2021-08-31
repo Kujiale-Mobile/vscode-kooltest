@@ -1,5 +1,5 @@
-import * as path from "path";
-import * as fs from "fs";
+import * as path from 'path';
+import * as fs from 'fs';
 
 /**
  * 文件信息
@@ -12,12 +12,12 @@ export class FileInfo {
 
   constructor(itemPath: string) {
     this.itemPath = itemPath;
-    this.type = fs.statSync(itemPath).isDirectory() ? "dir" : "file";
+    this.type = fs.statSync(itemPath).isDirectory() ? 'dir' : 'file';
     this.name = path.basename(itemPath);
   }
 
   isDirectory(): boolean {
-    return this.type == "dir";
+    return this.type ==='dir';
   }
 
   getPath() {

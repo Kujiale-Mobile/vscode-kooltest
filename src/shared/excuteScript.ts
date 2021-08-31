@@ -1,4 +1,4 @@
-import { KEYTYPE } from "./domEventsToRecord";
+import { KEYTYPE } from './domEventsToRecord';
 
 /**
  * 控制器，false 会
@@ -20,7 +20,7 @@ export const screenShotCommand = (bool: boolean) => {
 };
 
 export const addAllListenersScript = (events: any): string => {
-  let blocks = "";
+  let blocks = '';
   blocks += `window.keytype = ${JSON.stringify(KEYTYPE)};`;
   // blocks += `
   //   function getPathTo(element) {
@@ -59,13 +59,13 @@ export const addAllListenersScript = (events: any): string => {
   //   }
   //  `;
   for (let type in events) {
-    if (type.startsWith("key")) {
+    if (type.startsWith('key')) {
       blocks += `\n !window.recorderListenerAdded && window.addEventListener('${type}', (e) => {
         window.recorderController && console.warn('recorder event {${type}}:', '"' + window.keytype[e.code] + '"')
       });`;
       continue;
     }
-    if (type === "mousewheel") {
+    if (type === 'mousewheel') {
       blocks += `\n !window.recorderListenerAdded && window.addEventListener('${type}', (e) => {
         if (window.recorderController) {
           console.warn('recorder event {${type}}:', e.clientX , e.clientY , e.deltaY)
@@ -78,6 +78,6 @@ export const addAllListenersScript = (events: any): string => {
       });`;
   }
   blocks +=
-    "!window.recorderListenerAdded && (window.recorderListenerAdded = true);";
+    '!window.recorderListenerAdded && (window.recorderListenerAdded = true);';
   return blocks;
 };
