@@ -7,7 +7,7 @@ import AutoComplete from "./syntaxes/auto-complete";
 import Hover from "./syntaxes/hover";
 import provideDefinition from "./syntaxes/provideDefinition";
 import provideCSV from "./syntaxes/provideCSV";
-import { codeLensController } from "./codelens/codelenController";
+import { codeLensController } from "./codelens/CodelenController";
 import screenShot from "./command/screenShot";
 import play from "./command/jarRunner";
 import Rpa from "./treeview/rpaTreeView";

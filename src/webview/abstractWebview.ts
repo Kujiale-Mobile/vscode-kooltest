@@ -1,5 +1,4 @@
 import * as vscode from 'vscode';
-
 export abstract class AbstractWebview implements vscode.Disposable {
   protected readonly viewType: string = 'test-rpa.webview';
   protected panel: vscode.WebviewPanel | undefined;
