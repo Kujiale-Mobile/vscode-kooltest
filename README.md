@@ -11,8 +11,8 @@
 kool-test-script 提供的核心能力有：
 
 - **编码辅助**：基于 DSL 规范提供代码提示（自动补全、信息提示和定义跳转）、代码重构和代码片段等功能，覆盖场景多响应快准确率高，提升编码幸福感。
-- **Debug辅助**：提供运行测试脚本的能力，动态生成测试报告。
-- **录制行为**：在一些需要模拟鼠标操作/截图的场景，可以通过录制 Macro脚本的形式，记录下鼠标键盘的操作，自动生成具体的 DSL 代码。
+- **Debug 辅助**：提供运行测试脚本的能力，动态生成测试报告。
+- **录制行为**：在一些需要模拟鼠标操作/截图的场景，可以通过录制 Macro 脚本的形式，记录下鼠标键盘的操作，自动生成具体的 DSL 代码。
 
 VS Code 插件提供一些可以帮你更快开发脚本并且可以快速浏览，脚本运行的结果。
 
@@ -20,7 +20,7 @@ VS Code 插件提供一些可以帮你更快开发脚本并且可以快速浏览
 
 1. 安装 java 环境 [https://docs.oracle.com/goldengate/1212/gg-winux/GDRAD/java.htm#BGBFJHAB](https://docs.oracle.com/goldengate/1212/gg-winux/GDRAD/java.htm#BGBFJHAB) 。
 2. 点击 VS Code 活动栏上的「插件商店图标」搜索 kool-test-script 或者在 VsCode 市场下载 [Kooltest 插件](https://marketplace.visualstudio.com/items?itemName=kujiale.kool-test-script)。
-3. 在 VsCode 创建一个 *.feature 文件，插件将自动为 feature 填充好模版。
+3. 在 VsCode 创建一个 \*.feature 文件，插件将自动为 feature 填充好模版。
 4. 即可按照你所想编写你的 kooltest 脚本了。
 
 ### 自动补全
@@ -33,7 +33,7 @@ kool-test-script 增强了测试人员经常使用的 gherkin 及样式相关文
 
 ![https://qhstaticssl.kujiale.com/newt/101463/image/gif/1629774893779/8756842DD142D5B1BA983872D17AD8B1.gif](https://qhstaticssl.kujiale.com/newt/101463/image/gif/1629774893779/8756842DD142D5B1BA983872D17AD8B1.gif)
 
-### *.feature文件
+### \*.feature 文件
 
 脚本核心文件 feature 可以在编辑器里直接运行脚本
 
@@ -43,7 +43,7 @@ kool-test-script 增强了测试人员经常使用的 gherkin 及样式相关文
 
 ![https://qhstaticssl.kujiale.com/newt/103016/image/gif/1629773195621/7F450F9F39CAC3F5CF7B3288943218A4.gif](https://qhstaticssl.kujiale.com/newt/103016/image/gif/1629773195621/7F450F9F39CAC3F5CF7B3288943218A4.gif)
 
-### *.macro 文件
+### \*.macro 文件
 
 对于提供脚本复用能力的宏指令文件，我们提供了辅助录制键盘鼠标行为的能力。
 
