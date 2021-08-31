@@ -170,7 +170,7 @@ const provideHover = (
   }
   const keyword = letterArray.join('');
   let keyword2 = ' ';
-  if (keyword == 'mouse' || keyword == 'key') {
+  if (keyword === 'mouse' || keyword === 'key') {
     right++;
     while (/^\S$/.test(text[right])) {
       keyword2 += text[right];

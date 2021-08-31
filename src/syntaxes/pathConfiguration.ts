@@ -72,7 +72,7 @@ export default class PathConfiguration {
     );
     this.data.ignoredPrefixes = codeConfiguration.get('ignoredPrefixes');
     this.data.homeDirectory =
-      process.env[process.platform == 'win32' ? 'USERPROFILE' : 'HOME'];
+      process.env[process.platform === 'win32' ? 'USERPROFILE' : 'HOME'];
 
     var workspaceRootFolder = vs.workspace.workspaceFolders
       ? vs.workspace.workspaceFolders[0]

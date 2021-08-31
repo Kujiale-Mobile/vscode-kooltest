@@ -104,10 +104,10 @@ class Store {
     return this.terminal;
   }
   setCucumberWatcher(watch: FSWatcher) {
-    this.cucumberWatcher = watch
+    this.cucumberWatcher = watch;
   }
   getCucumberWatcher() {
-    return this.cucumberWatcher
+    return this.cucumberWatcher;
   }
 }
 
