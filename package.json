@@ -169,7 +169,8 @@
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test/runTest.js",
+    "ci": "npm i && vsce package"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.11",
